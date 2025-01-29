@@ -24,7 +24,7 @@ export const getFirstElement = (array) => {
 	return array[0];
 };
 
-console.info("Exercice 2 :", getFirstElement([1]));
+console.info("Exercice 2 :", getFirstElement([6, 2, 3]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 3
@@ -75,7 +75,7 @@ export const reverseString = (string) => {
 	return reverseString;
 };
 
-console.info("Exercice 5 : ", reverseString("Hello"));
+console.info("Exercice 5 : ", reverseString("Bonjour"));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 6
@@ -83,9 +83,17 @@ console.info("Exercice 5 : ", reverseString("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit retourner le plus grand nombre du tableau.
 // Exemple : [1, 2, 3] => 3
 
-// export const getMax = () => {}
+export const getMax = (array) => {
+	let max = array[0];
+	for (let i = 1; i < array.length; i++) {
+		if (array[i] > max) {
+			max = array[i];
+		}
+	}
+	return max;
+};
 
-// console.info("Exercice 6 : ", getMax([1, 2, 3]));
+console.info("Exercice 6 : ", getMax([1, 2, 3]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 7
@@ -93,9 +101,17 @@ console.info("Exercice 5 : ", reverseString("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit retourner le plus petit nombre du tableau.
 // Exemple : [1, 2, 3] => 1
 
-// export const getMin = () => {}
+export const getMin = (array) => {
+	let min = array[0];
+	for (let i = 1; i > array.length; i--) {
+		if (array[i] < min) {
+			min = array[i];
+		}
+	}
+	return min;
+};
 
-// console.info("Exercice 7 : ", getMin([1, 2, 3]));
+console.info("Exercice 7 : ", getMin([1, 2, 3]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 8
@@ -103,9 +119,10 @@ console.info("Exercice 5 : ", reverseString("Hello"));
 // Ajuste la fonction qui prend en paramètre une string et qui doit retourner la string sans les voyelles.
 // Exemple : "Hello" => "Hll"
 
-// export const removeVowels = () => {}
-
-// console.info("Exercice 8 : ", removeVowels("Hello"));
+function removeVowels(str) {
+	return str.replace(/[aeiouAEIOU]/g, "");
+}
+console.info("Exercice 8:", removeVowels("Bonjour"));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 9
@@ -113,9 +130,11 @@ console.info("Exercice 5 : ", reverseString("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit retourner le tableau trié par ordre croissant.
 // Exemple : [1, 3, 2] => [1, 2, 3]
 
-// export const sortArray = () => {}
+export const sortArray = (array) => {
+	return array.sort((a, b) => a - b);
+};
 
-// console.info("Exercice 9 : ", sortArray([1, 3, 2]));
+console.info("Exercice 9 : ", sortArray([1, 3, 2]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 10
@@ -123,11 +142,14 @@ console.info("Exercice 5 : ", reverseString("Hello"));
 // Ajuste la fonction qui prend en paramètre une string et qui renvoie un tableau avec toutes les rotations possibles de cette string.
 // Exemple : "Hello" => ["elloH", "lloHe", "loHel", "oHell", "Hello"]
 
-// export const getStringRotations = () => {
-
-// };
-
-// console.info("Exercice 10 : ", getStringRotations("Hello"));
+export const getStringRotations = (string) => {
+	let rotations = [];
+	for (let i = 0; i < string.length; i++) {
+		rotations.push(string.slice(i) + string.slice(0, i));
+	}
+	return rotations;
+};
+console.info("Exercice 10 : ", getStringRotations("Hello"));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 11
@@ -135,9 +157,11 @@ console.info("Exercice 5 : ", reverseString("Hello"));
 // Ajuste la fonction qui prend en paramètre un tableau et qui doit ajouter le nombre 1 à chaque élément du tableau.
 // Exemple : [1, 2, 3] => [2, 3, 4]
 
-// export const incrementArray = () => {}
+export const incrementArray = (array) => {
+	return array.map((nombre) => nombre + 1);
+};
 
-// console.info("Exercice 11 : ", incrementArray([1, 2, 3]));
+console.info("Exercice 11 : ", incrementArray([1, 2, 3]));
 
 //----------------------------------------------------------------------------------------------//
 // EXERCICE 12
